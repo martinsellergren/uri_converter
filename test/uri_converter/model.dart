@@ -4,7 +4,6 @@ part 'model.freezed.dart';
 part 'model.g.dart';
 
 @Freezed(unionKey: 'path')
-@freezed
 sealed class AppDestination with _$AppDestination {
   const AppDestination._();
 

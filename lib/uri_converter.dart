@@ -2,8 +2,20 @@ library;
 
 import 'dart:convert';
 
-import 'package:cartesian_product/cartesian_product.dart';
 import 'package:collection/collection.dart';
+
+import 'src/utils.dart';
+
+/// The data model is required have a top level property string called path,
+/// which will become the uri's path.
+///
+/// Other properties become query parameters.
+Uri convertDataModelToUri<T extends Object>({
+  required T dataModel,
+  required Map<String, dynamic> Function(T e) toJson,
+}) {
+  return toJson(dataModel).toUri();
+}
 
 T convertUriToDataModel<T extends Object>({
   required Uri uri,
@@ -13,13 +25,7 @@ T convertUriToDataModel<T extends Object>({
   if (paramValues.isEmpty) {
     return fromJson({'path': uri.path});
   }
-  final paramValues_ = paramValues.map((e) => '"$e"').toList();
-  final bags = paramValues.mapIndexed((i, e) => [e, paramValues_[i]]);
-
-  // In toUri conversion, we remove quotation around strings in query params, to avoid messy uris (%22 litter).
-  // This means that we don't know which params should be quoted and which shouldn't be, when converting back.
-  // Solution: Try all combinations of quoted/not quoted, for all query params.
-  for (final paramValues in cartesianProduct(bags)) {
+  for (final paramValues in paramValues.possibleParamValues()) {
     try {
       return fromJson({
         'path': uri.path,
@@ -30,17 +36,10 @@ T convertUriToDataModel<T extends Object>({
         ),
       });
     } catch (e) {
-      // try next
+      // try next set of param values
     }
   }
   throw FormatException();
-}
-
-Uri convertDataModelToUri<T extends Object>({
-  required T dataModel,
-  required Map<String, dynamic> Function(T e) toJson,
-}) {
-  return toJson(dataModel).toUri();
 }
 
 extension ConvertJsonToUri on Map<String, dynamic> {
