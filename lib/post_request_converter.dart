@@ -31,7 +31,6 @@ PostRequest convertDataModelToPostRequest<T extends Object>({
   try {
     final json = toJson(dataModel);
     final body = json.remove('body');
-    print('<me> $body ${body.runtimeType}');
     final uri = convertDataModelToUri(dataModel: dataModel, toJson: toJson);
     return PostRequest(
       path: uri.path,
