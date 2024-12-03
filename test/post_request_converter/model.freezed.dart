@@ -16,9 +16,9 @@ final _privateConstructorUsedError = UnsupportedError(
 
 Project _$ProjectFromJson(Map<String, dynamic> json) {
   switch (json['path']) {
-    case 'minimal':
+    case '/minimal_project':
       return Minimal.fromJson(json);
-    case 'small':
+    case '/small_project':
       return Small.fromJson(json);
     case '/big_project':
       return Big.fromJson(json);
@@ -128,7 +128,8 @@ class __$$MinimalImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$MinimalImpl implements Minimal {
-  const _$MinimalImpl({final String? $type}) : $type = $type ?? 'minimal';
+  const _$MinimalImpl({final String? $type})
+      : $type = $type ?? '/minimal_project';
 
   factory _$MinimalImpl.fromJson(Map<String, dynamic> json) =>
       _$$MinimalImplFromJson(json);
@@ -276,7 +277,7 @@ class __$$SmallImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$SmallImpl implements Small {
   const _$SmallImpl({required this.title, final String? $type})
-      : $type = $type ?? 'small';
+      : $type = $type ?? '/small_project';
 
   factory _$SmallImpl.fromJson(Map<String, dynamic> json) =>
       _$$SmallImplFromJson(json);

@@ -7,8 +7,10 @@ part 'model.g.dart';
 
 @Freezed(unionKey: 'path')
 sealed class Project with _$Project {
+  @FreezedUnionValue('/minimal_project')
   const factory Project.minimal() = Minimal;
 
+  @FreezedUnionValue('/small_project')
   const factory Project.small({
     required String title,
   }) = Small;
