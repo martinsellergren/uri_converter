@@ -31,7 +31,7 @@ PostRequest convertDataModelToPostRequest<T extends Object>({
   try {
     final json = toJson(dataModel);
     final body = json.remove('body');
-    final uri = convertDataModelToUri(dataModel: dataModel, toJson: toJson);
+    final uri = json.toUri();
     return PostRequest(
       path: uri.path,
       queryParameters: uri.queryParameters,

@@ -1,6 +1,6 @@
 name: uri_converter
 description: Convert between uri and your data model.
-version: 1.1.2
+version: 1.1.3
 repository: https://github.com/martinsellergren/uri_converter
 
 environment:

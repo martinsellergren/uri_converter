@@ -1,3 +1,7 @@
+## 1.1.3
+
+- Fix a big where body wasn't removed from query parameters.
+
 ## 1.1.2
 
 - Readme
