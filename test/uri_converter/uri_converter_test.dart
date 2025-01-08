@@ -42,7 +42,7 @@ void main() {
       );
       expect(
         convertDataModelToUri(dataModel: _home, toJson: (e) => e.toJson()),
-        Uri.parse('/'),
+        Uri(),
       );
     },
   );
@@ -105,6 +105,49 @@ void main() {
         dataModel: _details.copyWith(name: 'Martin\\S'),
         fromJson: DetailsDestination.fromJson,
         toJson: (e) => e.toJson(),
+      );
+    },
+  );
+
+  test(
+    "Slash permissive",
+    () {
+      expect(
+        _home,
+        convertUriToDataModel(
+          uri: Uri(path: '/'),
+          fromJson: AppDestination.fromJson,
+        ),
+      );
+      expect(
+        _home,
+        convertUriToDataModel(
+          uri: Uri(),
+          fromJson: AppDestination.fromJson,
+        ),
+      );
+      expect(
+        _home,
+        convertUriToDataModel(
+          uri: Uri.parse('https://whatever.com:4321'),
+          fromJson: AppDestination.fromJson,
+        ),
+      );
+      expect(
+        _details,
+        convertUriToDataModel(
+          uri: Uri.parse(
+              'details?name=Martin+S&age=33&phrase=101&isHappy=true&address=%7B%22street%22%3A%22%5C%22Stenkumlav%C3%A4gen%5C%22%22%2C%22number%22%3A22%7D'),
+          fromJson: AppDestination.fromJson,
+        ),
+      );
+      expect(
+        _details,
+        convertUriToDataModel(
+          uri: Uri.parse(
+              '/details?name=Martin+S&age=33&phrase=101&isHappy=true&address=%7B%22street%22%3A%22%5C%22Stenkumlav%C3%A4gen%5C%22%22%2C%22number%22%3A22%7D'),
+          fromJson: AppDestination.fromJson,
+        ),
       );
     },
   );

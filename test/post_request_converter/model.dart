@@ -5,19 +5,16 @@ import '../uri_converter/model.dart';
 part 'model.freezed.dart';
 part 'model.g.dart';
 
-@Freezed(unionKey: 'path')
+@Freezed(unionKey: 'path', unionValueCase: FreezedUnionCase.kebab)
 sealed class Project with _$Project {
-  @FreezedUnionValue('/minimal_project')
-  const factory Project.minimal() = Minimal;
+  const factory Project.minimalProject() = Minimal;
 
-  @FreezedUnionValue('/small_project')
-  const factory Project.small({
+  const factory Project.smallProject({
     required String title,
   }) = Small;
 
   @JsonSerializable(explicitToJson: true)
-  @FreezedUnionValue('/big_project')
-  const factory Project.big({
+  const factory Project.bigProject({
     required String description,
     required double pay,
     required DateTime startDate,

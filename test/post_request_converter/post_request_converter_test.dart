@@ -65,7 +65,7 @@ void main() {
         dataModel: _big,
         toJson: (e) => e.toJson(),
       );
-      expect(req.path, '/big_project');
+      expect(req.path, 'big-project');
       expect(req.body, _big.body.toJson());
       print('Query parameters: ${req.queryParameters}');
     },

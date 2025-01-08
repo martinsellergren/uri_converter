@@ -3,14 +3,13 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'model.freezed.dart';
 part 'model.g.dart';
 
-@Freezed(unionKey: 'path')
+@Freezed(unionKey: 'path', unionValueCase: FreezedUnionCase.kebab)
 sealed class AppDestination with _$AppDestination {
   const AppDestination._();
 
   @FreezedUnionValue('/')
   const factory AppDestination.home() = HomeDestination;
 
-  @FreezedUnionValue('/details')
   const factory AppDestination.details({
     required String name,
     required int age,

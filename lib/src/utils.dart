@@ -11,3 +11,22 @@ extension ParamValuesX on Iterable<String> {
     return cartesianProduct(bags);
   }
 }
+
+extension FromJsonX<T> on T Function(Map<String, dynamic> json) {
+  T Function(Map<String, dynamic> json) get slashPermissive {
+    return (json) {
+      try {
+        return this(json);
+      } catch (e) {
+        String path = json['path'] as String;
+        path = path.startsWith('/') ? path.substring(1) : '/$path';
+        final json1 = {...json, 'path': path};
+        try {
+          return this(json1);
+        } catch (e) {
+          rethrow;
+        }
+      }
+    };
+  }
+}

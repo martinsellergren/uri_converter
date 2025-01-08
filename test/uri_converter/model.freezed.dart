@@ -18,7 +18,7 @@ AppDestination _$AppDestinationFromJson(Map<String, dynamic> json) {
   switch (json['path']) {
     case '/':
       return HomeDestination.fromJson(json);
-    case '/details':
+    case 'details':
       return DetailsDestination.fromJson(json);
 
     default:
@@ -317,7 +317,7 @@ class _$DetailsDestinationImpl extends DetailsDestination {
       required this.secret,
       required this.address,
       final String? $type})
-      : $type = $type ?? '/details',
+      : $type = $type ?? 'details',
         super._();
 
   factory _$DetailsDestinationImpl.fromJson(Map<String, dynamic> json) =>

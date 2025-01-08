@@ -16,11 +16,11 @@ final _privateConstructorUsedError = UnsupportedError(
 
 Project _$ProjectFromJson(Map<String, dynamic> json) {
   switch (json['path']) {
-    case '/minimal_project':
+    case 'minimal-project':
       return Minimal.fromJson(json);
-    case '/small_project':
+    case 'small-project':
       return Small.fromJson(json);
-    case '/big_project':
+    case 'big-project':
       return Big.fromJson(json);
 
     default:
@@ -33,51 +33,51 @@ Project _$ProjectFromJson(Map<String, dynamic> json) {
 mixin _$Project {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() minimal,
-    required TResult Function(String title) small,
+    required TResult Function() minimalProject,
+    required TResult Function(String title) smallProject,
     required TResult Function(String description, double pay,
             DateTime startDate, Address? address, Body body)
-        big,
+        bigProject,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? minimal,
-    TResult? Function(String title)? small,
+    TResult? Function()? minimalProject,
+    TResult? Function(String title)? smallProject,
     TResult? Function(String description, double pay, DateTime startDate,
             Address? address, Body body)?
-        big,
+        bigProject,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? minimal,
-    TResult Function(String title)? small,
+    TResult Function()? minimalProject,
+    TResult Function(String title)? smallProject,
     TResult Function(String description, double pay, DateTime startDate,
             Address? address, Body body)?
-        big,
+        bigProject,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Minimal value) minimal,
-    required TResult Function(Small value) small,
-    required TResult Function(Big value) big,
+    required TResult Function(Minimal value) minimalProject,
+    required TResult Function(Small value) smallProject,
+    required TResult Function(Big value) bigProject,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Minimal value)? minimal,
-    TResult? Function(Small value)? small,
-    TResult? Function(Big value)? big,
+    TResult? Function(Minimal value)? minimalProject,
+    TResult? Function(Small value)? smallProject,
+    TResult? Function(Big value)? bigProject,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Minimal value)? minimal,
-    TResult Function(Small value)? small,
-    TResult Function(Big value)? big,
+    TResult Function(Minimal value)? minimalProject,
+    TResult Function(Small value)? smallProject,
+    TResult Function(Big value)? bigProject,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -129,7 +129,7 @@ class __$$MinimalImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$MinimalImpl implements Minimal {
   const _$MinimalImpl({final String? $type})
-      : $type = $type ?? '/minimal_project';
+      : $type = $type ?? 'minimal-project';
 
   factory _$MinimalImpl.fromJson(Map<String, dynamic> json) =>
       _$$MinimalImplFromJson(json);
@@ -139,7 +139,7 @@ class _$MinimalImpl implements Minimal {
 
   @override
   String toString() {
-    return 'Project.minimal()';
+    return 'Project.minimalProject()';
   }
 
   @override
@@ -155,39 +155,39 @@ class _$MinimalImpl implements Minimal {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() minimal,
-    required TResult Function(String title) small,
+    required TResult Function() minimalProject,
+    required TResult Function(String title) smallProject,
     required TResult Function(String description, double pay,
             DateTime startDate, Address? address, Body body)
-        big,
+        bigProject,
   }) {
-    return minimal();
+    return minimalProject();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? minimal,
-    TResult? Function(String title)? small,
+    TResult? Function()? minimalProject,
+    TResult? Function(String title)? smallProject,
     TResult? Function(String description, double pay, DateTime startDate,
             Address? address, Body body)?
-        big,
+        bigProject,
   }) {
-    return minimal?.call();
+    return minimalProject?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? minimal,
-    TResult Function(String title)? small,
+    TResult Function()? minimalProject,
+    TResult Function(String title)? smallProject,
     TResult Function(String description, double pay, DateTime startDate,
             Address? address, Body body)?
-        big,
+        bigProject,
     required TResult orElse(),
   }) {
-    if (minimal != null) {
-      return minimal();
+    if (minimalProject != null) {
+      return minimalProject();
     }
     return orElse();
   }
@@ -195,33 +195,33 @@ class _$MinimalImpl implements Minimal {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Minimal value) minimal,
-    required TResult Function(Small value) small,
-    required TResult Function(Big value) big,
+    required TResult Function(Minimal value) minimalProject,
+    required TResult Function(Small value) smallProject,
+    required TResult Function(Big value) bigProject,
   }) {
-    return minimal(this);
+    return minimalProject(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Minimal value)? minimal,
-    TResult? Function(Small value)? small,
-    TResult? Function(Big value)? big,
+    TResult? Function(Minimal value)? minimalProject,
+    TResult? Function(Small value)? smallProject,
+    TResult? Function(Big value)? bigProject,
   }) {
-    return minimal?.call(this);
+    return minimalProject?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Minimal value)? minimal,
-    TResult Function(Small value)? small,
-    TResult Function(Big value)? big,
+    TResult Function(Minimal value)? minimalProject,
+    TResult Function(Small value)? smallProject,
+    TResult Function(Big value)? bigProject,
     required TResult orElse(),
   }) {
-    if (minimal != null) {
-      return minimal(this);
+    if (minimalProject != null) {
+      return minimalProject(this);
     }
     return orElse();
   }
@@ -277,7 +277,7 @@ class __$$SmallImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$SmallImpl implements Small {
   const _$SmallImpl({required this.title, final String? $type})
-      : $type = $type ?? '/small_project';
+      : $type = $type ?? 'small-project';
 
   factory _$SmallImpl.fromJson(Map<String, dynamic> json) =>
       _$$SmallImplFromJson(json);
@@ -290,7 +290,7 @@ class _$SmallImpl implements Small {
 
   @override
   String toString() {
-    return 'Project.small(title: $title)';
+    return 'Project.smallProject(title: $title)';
   }
 
   @override
@@ -316,39 +316,39 @@ class _$SmallImpl implements Small {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() minimal,
-    required TResult Function(String title) small,
+    required TResult Function() minimalProject,
+    required TResult Function(String title) smallProject,
     required TResult Function(String description, double pay,
             DateTime startDate, Address? address, Body body)
-        big,
+        bigProject,
   }) {
-    return small(title);
+    return smallProject(title);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? minimal,
-    TResult? Function(String title)? small,
+    TResult? Function()? minimalProject,
+    TResult? Function(String title)? smallProject,
     TResult? Function(String description, double pay, DateTime startDate,
             Address? address, Body body)?
-        big,
+        bigProject,
   }) {
-    return small?.call(title);
+    return smallProject?.call(title);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? minimal,
-    TResult Function(String title)? small,
+    TResult Function()? minimalProject,
+    TResult Function(String title)? smallProject,
     TResult Function(String description, double pay, DateTime startDate,
             Address? address, Body body)?
-        big,
+        bigProject,
     required TResult orElse(),
   }) {
-    if (small != null) {
-      return small(title);
+    if (smallProject != null) {
+      return smallProject(title);
     }
     return orElse();
   }
@@ -356,33 +356,33 @@ class _$SmallImpl implements Small {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Minimal value) minimal,
-    required TResult Function(Small value) small,
-    required TResult Function(Big value) big,
+    required TResult Function(Minimal value) minimalProject,
+    required TResult Function(Small value) smallProject,
+    required TResult Function(Big value) bigProject,
   }) {
-    return small(this);
+    return smallProject(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Minimal value)? minimal,
-    TResult? Function(Small value)? small,
-    TResult? Function(Big value)? big,
+    TResult? Function(Minimal value)? minimalProject,
+    TResult? Function(Small value)? smallProject,
+    TResult? Function(Big value)? bigProject,
   }) {
-    return small?.call(this);
+    return smallProject?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Minimal value)? minimal,
-    TResult Function(Small value)? small,
-    TResult Function(Big value)? big,
+    TResult Function(Minimal value)? minimalProject,
+    TResult Function(Small value)? smallProject,
+    TResult Function(Big value)? bigProject,
     required TResult orElse(),
   }) {
-    if (small != null) {
-      return small(this);
+    if (smallProject != null) {
+      return smallProject(this);
     }
     return orElse();
   }
@@ -503,7 +503,7 @@ class _$BigImpl implements Big {
       required this.address,
       required this.body,
       final String? $type})
-      : $type = $type ?? '/big_project';
+      : $type = $type ?? 'big-project';
 
   factory _$BigImpl.fromJson(Map<String, dynamic> json) =>
       _$$BigImplFromJson(json);
@@ -524,7 +524,7 @@ class _$BigImpl implements Big {
 
   @override
   String toString() {
-    return 'Project.big(description: $description, pay: $pay, startDate: $startDate, address: $address, body: $body)';
+    return 'Project.bigProject(description: $description, pay: $pay, startDate: $startDate, address: $address, body: $body)';
   }
 
   @override
@@ -557,39 +557,39 @@ class _$BigImpl implements Big {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() minimal,
-    required TResult Function(String title) small,
+    required TResult Function() minimalProject,
+    required TResult Function(String title) smallProject,
     required TResult Function(String description, double pay,
             DateTime startDate, Address? address, Body body)
-        big,
+        bigProject,
   }) {
-    return big(description, pay, startDate, address, body);
+    return bigProject(description, pay, startDate, address, body);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? minimal,
-    TResult? Function(String title)? small,
+    TResult? Function()? minimalProject,
+    TResult? Function(String title)? smallProject,
     TResult? Function(String description, double pay, DateTime startDate,
             Address? address, Body body)?
-        big,
+        bigProject,
   }) {
-    return big?.call(description, pay, startDate, address, body);
+    return bigProject?.call(description, pay, startDate, address, body);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? minimal,
-    TResult Function(String title)? small,
+    TResult Function()? minimalProject,
+    TResult Function(String title)? smallProject,
     TResult Function(String description, double pay, DateTime startDate,
             Address? address, Body body)?
-        big,
+        bigProject,
     required TResult orElse(),
   }) {
-    if (big != null) {
-      return big(description, pay, startDate, address, body);
+    if (bigProject != null) {
+      return bigProject(description, pay, startDate, address, body);
     }
     return orElse();
   }
@@ -597,33 +597,33 @@ class _$BigImpl implements Big {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Minimal value) minimal,
-    required TResult Function(Small value) small,
-    required TResult Function(Big value) big,
+    required TResult Function(Minimal value) minimalProject,
+    required TResult Function(Small value) smallProject,
+    required TResult Function(Big value) bigProject,
   }) {
-    return big(this);
+    return bigProject(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Minimal value)? minimal,
-    TResult? Function(Small value)? small,
-    TResult? Function(Big value)? big,
+    TResult? Function(Minimal value)? minimalProject,
+    TResult? Function(Small value)? smallProject,
+    TResult? Function(Big value)? bigProject,
   }) {
-    return big?.call(this);
+    return bigProject?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Minimal value)? minimal,
-    TResult Function(Small value)? small,
-    TResult Function(Big value)? big,
+    TResult Function(Minimal value)? minimalProject,
+    TResult Function(Small value)? smallProject,
+    TResult Function(Big value)? bigProject,
     required TResult orElse(),
   }) {
-    if (big != null) {
-      return big(this);
+    if (bigProject != null) {
+      return bigProject(this);
     }
     return orElse();
   }

@@ -48,7 +48,7 @@ T convertPostRequestToDataModel<T extends Object>({
 }) {
   final queryParameters = postRequest.queryParameters;
   if (queryParameters == null || queryParameters.isEmpty) {
-    return fromJson({
+    return fromJson.slashPermissive({
       'path': postRequest.path,
       if (postRequest.body != null) 'body': postRequest.body,
     });
@@ -56,7 +56,7 @@ T convertPostRequestToDataModel<T extends Object>({
   final paramValues = queryParameters.values;
   for (final paramValues in paramValues.possibleParamValues()) {
     try {
-      return fromJson({
+      return fromJson.slashPermissive({
         'path': postRequest.path,
         if (postRequest.body != null) 'body': postRequest.body,
         ...Map.fromEntries(

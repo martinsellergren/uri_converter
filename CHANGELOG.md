@@ -1,3 +1,10 @@
+## 1.2.0
+
+- Make conversion to data model "slash permissive".
+  - Doesn't matter if serialized data model's path string starts with slash or not. So no need to add e.g `@FreezedUnionValue('/my-path')` annotations to every freezed union factory. Instead could use e.g `@Freezed(unionKey: 'path', unionValueCase: FreezedUnionCase.kebab)`.
+- Relax sdk- and some dependencies constraints.
+
+
 ## 1.1.3
 
 - Fix a big where body wasn't removed from query parameters.

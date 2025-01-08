@@ -23,11 +23,11 @@ T convertUriToDataModel<T extends Object>({
 }) {
   final paramValues = uri.queryParameters.values;
   if (paramValues.isEmpty) {
-    return fromJson({'path': uri.path});
+    return fromJson.slashPermissive({'path': uri.path});
   }
   for (final paramValues in paramValues.possibleParamValues()) {
     try {
-      return fromJson({
+      return fromJson.slashPermissive({
         'path': uri.path,
         ...Map.fromEntries(
           uri.queryParameters.entries.mapIndexed(
